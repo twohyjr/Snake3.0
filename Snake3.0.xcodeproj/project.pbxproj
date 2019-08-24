@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E1F22311E15A00D40819 /* AppDelegate.swift */; };
-		C632E1F52311E15A00D40819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E1F42311E15A00D40819 /* ViewController.swift */; };
 		C632E1F72311E15C00D40819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C632E1F62311E15C00D40819 /* Assets.xcassets */; };
 		C632E1FA2311E15C00D40819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C632E1F82311E15C00D40819 /* Main.storyboard */; };
+		C632E20F2311E39200D40819 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E20E2311E39200D40819 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C632E1EF2311E15A00D40819 /* Snake3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake3.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C632E1F22311E15A00D40819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C632E1F42311E15A00D40819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C632E1F62311E15C00D40819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C632E1F92311E15C00D40819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C632E1FB2311E15C00D40819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C632E1FC2311E15C00D40819 /* Snake3_0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snake3_0.entitlements; sourceTree = "<group>"; };
+		C632E20E2311E39200D40819 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +53,30 @@
 		C632E1F12311E15A00D40819 /* Snake3.0 */ = {
 			isa = PBXGroup;
 			children = (
+				C632E20D2311E36900D40819 /* Display */,
+				C632E20C2311E30200D40819 /* OtherFiles */,
+			);
+			path = Snake3.0;
+			sourceTree = "<group>";
+		};
+		C632E20C2311E30200D40819 /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
 				C632E1F22311E15A00D40819 /* AppDelegate.swift */,
-				C632E1F42311E15A00D40819 /* ViewController.swift */,
 				C632E1F62311E15C00D40819 /* Assets.xcassets */,
-				C632E1F82311E15C00D40819 /* Main.storyboard */,
 				C632E1FB2311E15C00D40819 /* Info.plist */,
 				C632E1FC2311E15C00D40819 /* Snake3_0.entitlements */,
 			);
-			path = Snake3.0;
+			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		C632E20D2311E36900D40819 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				C632E1F82311E15C00D40819 /* Main.storyboard */,
+				C632E20E2311E39200D40819 /* GameView.swift */,
+			);
+			path = Display;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C632E1F52311E15A00D40819 /* ViewController.swift in Sources */,
+				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,11 +287,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Snake3.0/Snake3_0.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Snake3.0/OtherFiles/Snake3_0.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9QQ2JZFGTQ;
-				INFOPLIST_FILE = Snake3.0/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Snake3.0/OtherFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -290,11 +306,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Snake3.0/Snake3_0.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Snake3.0/OtherFiles/Snake3_0.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9QQ2JZFGTQ;
-				INFOPLIST_FILE = Snake3.0/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Snake3.0/OtherFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
