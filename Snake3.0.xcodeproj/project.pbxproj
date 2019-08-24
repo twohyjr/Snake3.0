@@ -11,6 +11,10 @@
 		C632E1F72311E15C00D40819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C632E1F62311E15C00D40819 /* Assets.xcassets */; };
 		C632E1FA2311E15C00D40819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C632E1F82311E15C00D40819 /* Main.storyboard */; };
 		C632E20F2311E39200D40819 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E20E2311E39200D40819 /* GameView.swift */; };
+		C632E2192311E86F00D40819 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C632E2182311E86F00D40819 /* Shaders.metal */; };
+		C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21A2311ED5D00D40819 /* MetalTypes.swift */; };
+		C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21D2311EF1C00D40819 /* Mesh.swift */; };
+		C632E2202311F17300D40819 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21F2311F17300D40819 /* Engine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		C632E1FB2311E15C00D40819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C632E1FC2311E15C00D40819 /* Snake3_0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snake3_0.entitlements; sourceTree = "<group>"; };
 		C632E20E2311E39200D40819 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		C632E2182311E86F00D40819 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		C632E21A2311ED5D00D40819 /* MetalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTypes.swift; sourceTree = "<group>"; };
+		C632E21D2311EF1C00D40819 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		C632E21F2311F17300D40819 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 		C632E1F12311E15A00D40819 /* Snake3.0 */ = {
 			isa = PBXGroup;
 			children = (
+				C632E21A2311ED5D00D40819 /* MetalTypes.swift */,
+				C632E21F2311F17300D40819 /* Engine.swift */,
+				C632E2172311E85800D40819 /* Graphics */,
+				C632E21C2311EF1100D40819 /* Game */,
 				C632E20D2311E36900D40819 /* Display */,
 				C632E20C2311E30200D40819 /* OtherFiles */,
 			);
@@ -77,6 +89,22 @@
 				C632E20E2311E39200D40819 /* GameView.swift */,
 			);
 			path = Display;
+			sourceTree = "<group>";
+		};
+		C632E2172311E85800D40819 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				C632E2182311E86F00D40819 /* Shaders.metal */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		C632E21C2311EF1100D40819 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C632E21D2311EF1C00D40819 /* Mesh.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C632E2192311E86F00D40819 /* Shaders.metal in Sources */,
+				C632E2202311F17300D40819 /* Engine.swift in Sources */,
+				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
 				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,
+				C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
