@@ -77,15 +77,7 @@
 		C632E1F12311E15A00D40819 /* Snake3.0 */ = {
 			isa = PBXGroup;
 			children = (
-				C632E21A2311ED5D00D40819 /* MetalTypes.swift */,
-				C6AA18932312EFA2006CB183 /* GameTime.swift */,
-				C632E21F2311F17300D40819 /* Engine.swift */,
-				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
-				C6AA18952312F0F4006CB183 /* Node.swift */,
-				C6AA18912312EF29006CB183 /* Scene.swift */,
-				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
-				C6AA189A2312F299006CB183 /* GameObject.swift */,
-				C6AA189C2312F34C006CB183 /* Grid.swift */,
+				C6AA18A02312F548006CB183 /* Core */,
 				C6AA18972312F181006CB183 /* Utils */,
 				C632E2172311E85800D40819 /* Graphics */,
 				C632E21C2311EF1100D40819 /* Game */,
@@ -118,6 +110,8 @@
 		C632E2172311E85800D40819 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C632E21A2311ED5D00D40819 /* MetalTypes.swift */,
+				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
 				C632E2182311E86F00D40819 /* Shaders.metal */,
 			);
 			path = Graphics;
@@ -127,6 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				C632E21D2311EF1C00D40819 /* Mesh.swift */,
+				C6AA18952312F0F4006CB183 /* Node.swift */,
+				C6AA18912312EF29006CB183 /* Scene.swift */,
+				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
+				C6AA189A2312F299006CB183 /* GameObject.swift */,
+				C6AA189C2312F34C006CB183 /* Grid.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -137,6 +136,15 @@
 				C6AA18982312F19F006CB183 /* Math.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C6AA18A02312F548006CB183 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA18932312EFA2006CB183 /* GameTime.swift */,
+				C632E21F2311F17300D40819 /* Engine.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

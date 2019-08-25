@@ -17,10 +17,10 @@ class QuadMesh {
     }
     
     private func buildMesh() {
-        addVertex(postion: float3( 0.5, 0.5, 0.0))// Top Right
-        addVertex(postion: float3(-0.5, 0.5, 0.0))// Top Left
-        addVertex(postion: float3(-0.5,-0.5, 0.0))// Bottom Left
-        addVertex(postion: float3( 0.5,-0.5, 0.0))// Bottom Right
+        addVertex(postion: float3( 0.5, 0.5, 0.0), textureCoordinate: float2(1,0)) // Top Right
+        addVertex(postion: float3(-0.5, 0.5, 0.0), textureCoordinate: float2(0,0)) // Top Left
+        addVertex(postion: float3(-0.5,-0.5, 0.0), textureCoordinate: float2(0,1)) // Bottom Left
+        addVertex(postion: float3( 0.5,-0.5, 0.0), textureCoordinate: float2(1,1)) // Bottom Right
         
         _indices = [ 0, 1, 2,    0, 2, 3 ]
     }
