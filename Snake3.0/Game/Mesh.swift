@@ -1,7 +1,6 @@
 import MetalKit
 
 class QuadMesh {
-    
     private var _vertices: [Vertex] = []
     private var _indices: [UInt32] = []
     private var _vertexBuffer: MTLBuffer!

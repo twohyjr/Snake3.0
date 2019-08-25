@@ -15,6 +15,10 @@
 		C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21A2311ED5D00D40819 /* MetalTypes.swift */; };
 		C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21D2311EF1C00D40819 /* Mesh.swift */; };
 		C632E2202311F17300D40819 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21F2311F17300D40819 /* Engine.swift */; };
+		C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */; };
+		C6AA18922312EF29006CB183 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18912312EF29006CB183 /* Scene.swift */; };
+		C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18932312EFA2006CB183 /* GameTime.swift */; };
+		C6AA18962312F0F4006CB183 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18952312F0F4006CB183 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		C632E21A2311ED5D00D40819 /* MetalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTypes.swift; sourceTree = "<group>"; };
 		C632E21D2311EF1C00D40819 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		C632E21F2311F17300D40819 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStates.swift; sourceTree = "<group>"; };
+		C6AA18912312EF29006CB183 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		C6AA18932312EFA2006CB183 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
+		C6AA18952312F0F4006CB183 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				C632E21A2311ED5D00D40819 /* MetalTypes.swift */,
+				C6AA18932312EFA2006CB183 /* GameTime.swift */,
 				C632E21F2311F17300D40819 /* Engine.swift */,
+				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
+				C6AA18952312F0F4006CB183 /* Node.swift */,
+				C6AA18912312EF29006CB183 /* Scene.swift */,
 				C632E2172311E85800D40819 /* Graphics */,
 				C632E21C2311EF1100D40819 /* Game */,
 				C632E20D2311E36900D40819 /* Display */,
@@ -178,8 +190,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C632E2192311E86F00D40819 /* Shaders.metal in Sources */,
+				C6AA18962312F0F4006CB183 /* Node.swift in Sources */,
 				C632E2202311F17300D40819 /* Engine.swift in Sources */,
 				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
+				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
+				C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */,
+				C6AA18922312EF29006CB183 /* Scene.swift in Sources */,
 				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,
 				C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */,
