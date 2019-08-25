@@ -19,6 +19,7 @@
 		C6AA18922312EF29006CB183 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18912312EF29006CB183 /* Scene.swift */; };
 		C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18932312EFA2006CB183 /* GameTime.swift */; };
 		C6AA18962312F0F4006CB183 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18952312F0F4006CB183 /* Node.swift */; };
+		C6AA18992312F19F006CB183 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18982312F19F006CB183 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C6AA18912312EF29006CB183 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C6AA18932312EFA2006CB183 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
 		C6AA18952312F0F4006CB183 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		C6AA18982312F19F006CB183 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
 				C6AA18952312F0F4006CB183 /* Node.swift */,
 				C6AA18912312EF29006CB183 /* Scene.swift */,
+				C6AA18972312F181006CB183 /* Utils */,
 				C632E2172311E85800D40819 /* Graphics */,
 				C632E21C2311EF1100D40819 /* Game */,
 				C632E20D2311E36900D40819 /* Display */,
@@ -117,6 +120,14 @@
 				C632E21D2311EF1C00D40819 /* Mesh.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		C6AA18972312F181006CB183 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA18982312F19F006CB183 /* Math.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 			files = (
 				C632E2192311E86F00D40819 /* Shaders.metal in Sources */,
 				C6AA18962312F0F4006CB183 /* Node.swift in Sources */,
+				C6AA18992312F19F006CB183 /* Math.swift in Sources */,
 				C632E2202311F17300D40819 /* Engine.swift in Sources */,
 				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
 				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
