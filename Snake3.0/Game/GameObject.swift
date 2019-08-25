@@ -10,6 +10,11 @@ class GameObject: Node {
         self.mesh = QuadMesh()
     }
     
+    override func update() {
+        modelConstants.modelMatrix = modelMatrix
+        super.update()
+    }
+    
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(RenderPipelineStates.Get(renderPipelineStateType))
         

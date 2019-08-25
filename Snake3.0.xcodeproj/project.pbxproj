@@ -120,10 +120,9 @@
 		C632E21C2311EF1100D40819 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA18A12312F657006CB183 /* Scenes */,
 				C632E21D2311EF1C00D40819 /* Mesh.swift */,
 				C6AA18952312F0F4006CB183 /* Node.swift */,
-				C6AA18912312EF29006CB183 /* Scene.swift */,
-				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
 				C6AA189A2312F299006CB183 /* GameObject.swift */,
 				C6AA189C2312F34C006CB183 /* Grid.swift */,
 			);
@@ -145,6 +144,15 @@
 				C632E21F2311F17300D40819 /* Engine.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		C6AA18A12312F657006CB183 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA18912312EF29006CB183 /* Scene.swift */,
+				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

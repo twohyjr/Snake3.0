@@ -40,3 +40,5 @@ struct SceneConstants: sizeable {
 struct ModelConstants: sizeable {
     var modelMatrix = matrix_identity_float4x4
 }
+
+

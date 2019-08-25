@@ -39,3 +39,12 @@ fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]]) {
     
     return half4(color);
 }
+
+fragment half4 grid_background_fragment_shader(RasterizerData rd [[ stage_in ]],
+                                               constant float &totalGameTime [[ buffer(0) ]]) {
+    float4 color = abs(float4(rd.textureCoordinate.x,
+                              rd.textureCoordinate.y,
+                              abs(sin(totalGameTime)), 1.0));
+
+    return half4(color);
+}
