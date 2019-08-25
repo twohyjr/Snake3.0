@@ -21,7 +21,7 @@ class GameView: MTKView {
         
         RenderPipelineStates.Initialize()
         
-        scene = Scene()
+        scene = SnakeScene()
     }
 
 }

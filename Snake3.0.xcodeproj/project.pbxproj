@@ -20,6 +20,9 @@
 		C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18932312EFA2006CB183 /* GameTime.swift */; };
 		C6AA18962312F0F4006CB183 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18952312F0F4006CB183 /* Node.swift */; };
 		C6AA18992312F19F006CB183 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18982312F19F006CB183 /* Math.swift */; };
+		C6AA189B2312F299006CB183 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189A2312F299006CB183 /* GameObject.swift */; };
+		C6AA189D2312F34C006CB183 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189C2312F34C006CB183 /* Grid.swift */; };
+		C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189E2312F4AD006CB183 /* SnakeScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		C6AA18932312EFA2006CB183 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
 		C6AA18952312F0F4006CB183 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		C6AA18982312F19F006CB183 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		C6AA189A2312F299006CB183 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		C6AA189C2312F34C006CB183 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C6AA189E2312F4AD006CB183 /* SnakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
 				C6AA18952312F0F4006CB183 /* Node.swift */,
 				C6AA18912312EF29006CB183 /* Scene.swift */,
+				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
+				C6AA189A2312F299006CB183 /* GameObject.swift */,
+				C6AA189C2312F34C006CB183 /* Grid.swift */,
 				C6AA18972312F181006CB183 /* Utils */,
 				C632E2172311E85800D40819 /* Graphics */,
 				C632E21C2311EF1100D40819 /* Game */,
@@ -205,9 +214,12 @@
 				C6AA18992312F19F006CB183 /* Math.swift in Sources */,
 				C632E2202311F17300D40819 /* Engine.swift in Sources */,
 				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
+				C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */,
 				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
 				C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */,
+				C6AA189D2312F34C006CB183 /* Grid.swift in Sources */,
 				C6AA18922312EF29006CB183 /* Scene.swift in Sources */,
+				C6AA189B2312F299006CB183 /* GameObject.swift in Sources */,
 				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,
 				C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */,

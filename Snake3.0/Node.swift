@@ -42,6 +42,7 @@ class Node {
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) { }
     
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        doRender(renderCommandEncoder)
         for child in children {
             child.render(renderCommandEncoder)
         }
