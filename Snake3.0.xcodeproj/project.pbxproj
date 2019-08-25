@@ -27,6 +27,9 @@
 		C6AA18A52312FDC4006CB183 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A42312FDC4006CB183 /* GameSettings.swift */; };
 		C6AA18A72313005C006CB183 /* DepthStencilStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A62313005C006CB183 /* DepthStencilStates.swift */; };
 		C6AA18AA231307A9006CB183 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A9231307A9006CB183 /* Snake.swift */; };
+		C6AA18AF23130981006CB183 /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18AC23130981006CB183 /* KeyCodes.swift */; };
+		C6AA18B023130981006CB183 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18AD23130981006CB183 /* Keyboard.swift */; };
+		C6AA18B123130981006CB183 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18AE23130981006CB183 /* Mouse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		C6AA18A42312FDC4006CB183 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		C6AA18A62313005C006CB183 /* DepthStencilStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStates.swift; sourceTree = "<group>"; };
 		C6AA18A9231307A9006CB183 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		C6AA18AC23130981006CB183 /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
+		C6AA18AD23130981006CB183 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		C6AA18AE23130981006CB183 /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 				C6AA18972312F181006CB183 /* Utils */,
 				C632E2172311E85800D40819 /* Graphics */,
 				C632E21C2311EF1100D40819 /* Game */,
+				C6AA18AB2313096E006CB183 /* Input */,
 				C632E20D2311E36900D40819 /* Display */,
 				C632E20C2311E30200D40819 /* OtherFiles */,
 			);
@@ -175,6 +182,16 @@
 			path = Libraries;
 			sourceTree = "<group>";
 		};
+		C6AA18AB2313096E006CB183 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA18AD23130981006CB183 /* Keyboard.swift */,
+				C6AA18AC23130981006CB183 /* KeyCodes.swift */,
+				C6AA18AE23130981006CB183 /* Mouse.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,9 +264,11 @@
 			files = (
 				C632E2192311E86F00D40819 /* Shaders.metal in Sources */,
 				C6AA18962312F0F4006CB183 /* Node.swift in Sources */,
+				C6AA18B023130981006CB183 /* Keyboard.swift in Sources */,
 				C6AA18992312F19F006CB183 /* Math.swift in Sources */,
 				C632E2202311F17300D40819 /* Engine.swift in Sources */,
 				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
+				C6AA18AF23130981006CB183 /* KeyCodes.swift in Sources */,
 				C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */,
 				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
 				C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */,
@@ -259,6 +278,7 @@
 				C6AA18922312EF29006CB183 /* Scene.swift in Sources */,
 				C6AA189B2312F299006CB183 /* GameObject.swift in Sources */,
 				C6AA18A72313005C006CB183 /* DepthStencilStates.swift in Sources */,
+				C6AA18B123130981006CB183 /* Mouse.swift in Sources */,
 				C6AA18A32312FD15006CB183 /* Camera.swift in Sources */,
 				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,

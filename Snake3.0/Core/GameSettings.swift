@@ -2,7 +2,7 @@ import MetalKit
 
 class GameSettings {
     
-    private static var _gridSize: float2 = float2(10, 10)
+    private static var _gridSize: float2 = float2(11, 11)
     
     public static var GridSize: float2 { return _gridSize }
     public static var GridCellsWide: Float { return _gridSize.x }

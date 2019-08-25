@@ -7,6 +7,7 @@ class Grid: Node {
         super.init()
         gridBackground.moveZ(-2)
         addChild(gridBackground)
+        
         gridLines.moveZ(0.1)
         addChild(gridLines)
     }
@@ -40,10 +41,6 @@ class GridLines: GameObject {
     
     override var renderPipelineStateType: RenderPipelineStateTypes { return .GridLines }
     var gridConstants = GridConstants()
-    
-    override init() {
-        super.init()
-    }
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         var totalGameTime = GameTime.TotalGameTime
