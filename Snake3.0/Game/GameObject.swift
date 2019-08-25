@@ -17,6 +17,7 @@ class GameObject: Node {
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(RenderPipelineStates.Get(renderPipelineStateType))
+        renderCommandEncoder.setDepthStencilState(DepthStencilStates.Get(.Less))
         
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride, index: 2)
         

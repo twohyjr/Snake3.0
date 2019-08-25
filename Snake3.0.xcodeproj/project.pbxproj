@@ -23,6 +23,10 @@
 		C6AA189B2312F299006CB183 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189A2312F299006CB183 /* GameObject.swift */; };
 		C6AA189D2312F34C006CB183 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189C2312F34C006CB183 /* Grid.swift */; };
 		C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA189E2312F4AD006CB183 /* SnakeScene.swift */; };
+		C6AA18A32312FD15006CB183 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A22312FD15006CB183 /* Camera.swift */; };
+		C6AA18A52312FDC4006CB183 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A42312FDC4006CB183 /* GameSettings.swift */; };
+		C6AA18A72313005C006CB183 /* DepthStencilStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A62313005C006CB183 /* DepthStencilStates.swift */; };
+		C6AA18AA231307A9006CB183 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18A9231307A9006CB183 /* Snake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		C6AA189A2312F299006CB183 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		C6AA189C2312F34C006CB183 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		C6AA189E2312F4AD006CB183 /* SnakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeScene.swift; sourceTree = "<group>"; };
+		C6AA18A22312FD15006CB183 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C6AA18A42312FDC4006CB183 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		C6AA18A62313005C006CB183 /* DepthStencilStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStates.swift; sourceTree = "<group>"; };
+		C6AA18A9231307A9006CB183 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +118,8 @@
 		C632E2172311E85800D40819 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA18A8231300B5006CB183 /* Libraries */,
 				C632E21A2311ED5D00D40819 /* MetalTypes.swift */,
-				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
 				C632E2182311E86F00D40819 /* Shaders.metal */,
 			);
 			path = Graphics;
@@ -120,11 +128,13 @@
 		C632E21C2311EF1100D40819 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA18A22312FD15006CB183 /* Camera.swift */,
 				C6AA18A12312F657006CB183 /* Scenes */,
 				C632E21D2311EF1C00D40819 /* Mesh.swift */,
 				C6AA18952312F0F4006CB183 /* Node.swift */,
 				C6AA189A2312F299006CB183 /* GameObject.swift */,
 				C6AA189C2312F34C006CB183 /* Grid.swift */,
+				C6AA18A9231307A9006CB183 /* Snake.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 			children = (
 				C6AA18932312EFA2006CB183 /* GameTime.swift */,
 				C632E21F2311F17300D40819 /* Engine.swift */,
+				C6AA18A42312FDC4006CB183 /* GameSettings.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -153,6 +164,15 @@
 				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C6AA18A8231300B5006CB183 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */,
+				C6AA18A62313005C006CB183 /* DepthStencilStates.swift */,
+			);
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +253,13 @@
 				C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */,
 				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
 				C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */,
+				C6AA18AA231307A9006CB183 /* Snake.swift in Sources */,
+				C6AA18A52312FDC4006CB183 /* GameSettings.swift in Sources */,
 				C6AA189D2312F34C006CB183 /* Grid.swift in Sources */,
 				C6AA18922312EF29006CB183 /* Scene.swift in Sources */,
 				C6AA189B2312F299006CB183 /* GameObject.swift in Sources */,
+				C6AA18A72313005C006CB183 /* DepthStencilStates.swift in Sources */,
+				C6AA18A32312FD15006CB183 /* Camera.swift in Sources */,
 				C632E20F2311E39200D40819 /* GameView.swift in Sources */,
 				C632E1F32311E15A00D40819 /* AppDelegate.swift in Sources */,
 				C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */,

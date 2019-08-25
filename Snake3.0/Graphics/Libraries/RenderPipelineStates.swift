@@ -3,6 +3,7 @@ import MetalKit
 
 enum RenderPipelineStateTypes {
     case Basic
+    case GridLines
     case GridBackground
 }
 
@@ -31,6 +32,7 @@ class RenderPipelineStates {
     public static func Initialize() {
         generateBasicRenderPipelineState()
         generateGridBackgroundRenderPipelineState()
+        generateGridLinesRenderPipelineState()
     }
     
     private static func generateBasicRenderPipelineState() {
@@ -39,6 +41,8 @@ class RenderPipelineStates {
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm_srgb
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptor
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
@@ -59,6 +63,8 @@ class RenderPipelineStates {
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm_srgb
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptor
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
@@ -71,6 +77,28 @@ class RenderPipelineStates {
         }
         
         _library.updateValue(renderPipelineState, forKey: .GridBackground)
+    }
+    
+    private static func generateGridLinesRenderPipelineState() {
+        let vertexFunction = Engine.DefaultLibrary.makeFunction(name: "vertex_shader")
+        let fragmentFunction = Engine.DefaultLibrary.makeFunction(name: "grid_lines_fragment_shader")
+        
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm_srgb
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptor
+        renderPipelineDescriptor.vertexFunction = vertexFunction
+        renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        
+        var renderPipelineState: MTLRenderPipelineState!
+        do {
+            renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+        } catch {
+            print("ERROR::RENDERPIPELINESTATE::\(error)")
+        }
+        
+        _library.updateValue(renderPipelineState, forKey: .GridLines)
     }
 
     public static func Get(_ type: RenderPipelineStateTypes)->MTLRenderPipelineState {

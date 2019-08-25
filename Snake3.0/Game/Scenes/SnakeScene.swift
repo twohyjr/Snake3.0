@@ -2,13 +2,12 @@ import MetalKit
 
 class SnakeScene: Scene {
     
-    var gridBackground = GridBackground()
+    var grid = Grid()
     override func buildScene() {
-        addChild(gridBackground)
-    }
-    
-    override func doUpdate() {
-        gridBackground.rotateZ(GameTime.DeltaTime)
+        camera.moveZ(0.63)
+        
+        
+        addChild(grid)
     }
     
 }

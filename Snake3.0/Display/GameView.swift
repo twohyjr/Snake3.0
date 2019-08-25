@@ -16,10 +16,14 @@ class GameView: MTKView {
         self.clearColor = MTLClearColor(red: 0.2, green: 0.5, blue: 0.3, alpha: 1.0)
         
         self.colorPixelFormat = .bgra8Unorm_srgb
+        
+        self.depthStencilPixelFormat = .depth32Float_stencil8
     
         self.delegate = self
         
         RenderPipelineStates.Initialize()
+        
+        DepthStencilStates.Initialize()
         
         scene = SnakeScene()
     }

@@ -41,4 +41,7 @@ struct ModelConstants: sizeable {
     var modelMatrix = matrix_identity_float4x4
 }
 
-
+struct GridConstants: sizeable {
+    var cellCount: float2 = GameSettings.GridSize
+    var lineWidth: Float = GameSettings.GridLinesWidth
+}

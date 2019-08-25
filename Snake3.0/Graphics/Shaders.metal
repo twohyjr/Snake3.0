@@ -21,6 +21,11 @@ struct RasterizerData {
     float3 worldPosition;
 };
 
+struct GridConstants {
+    float2 cellCount;
+    float lineWidth;
+};
+
 vertex RasterizerData vertex_shader(Vertex vIn [[ stage_in ]],
                                     constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                     constant ModelConstants &modelConstants [[ buffer(2) ]]) {
@@ -46,5 +51,41 @@ fragment half4 grid_background_fragment_shader(RasterizerData rd [[ stage_in ]],
                               rd.textureCoordinate.y,
                               abs(sin(totalGameTime)), 1.0));
 
+    return half4(color);
+}
+
+float4 gridLines(float2 cellCounts,
+                 float lineWidth,
+                 float2 texCoord,
+                 float4 gridColor,
+                 float4 backgroundColor) {
+    float4 color = backgroundColor;
+    float cellsWide = cellCounts.x;
+    float cellsHigh = cellCounts.y;
+    
+    float x = fract(texCoord.x * cellsWide);
+    float y = fract(texCoord.y * cellsHigh);
+    if (x < lineWidth ||
+        y < lineWidth ||
+        x > 1 - lineWidth ||
+        y > 1 - lineWidth)
+        color = gridColor;
+    
+    return color;
+}
+
+fragment half4 grid_lines_fragment_shader(RasterizerData rd [[ stage_in ]],
+                                          constant float &totalGameTime [[ buffer(0) ]],
+                                          constant GridConstants &gridConstants [[ buffer(1) ]]) {
+    float4 gridLinesColor = abs(float4(rd.textureCoordinate.x,
+                                       rd.textureCoordinate.y,
+                                       abs(sin(1.0)), 1.0));
+    
+    float4 color = gridLines(gridConstants.cellCount,
+                             gridConstants.lineWidth,
+                             rd.textureCoordinate,
+                             gridLinesColor,
+                             float4(0.02,0.02,0.02,1)) * 0.3;
+    
     return half4(color);
 }
