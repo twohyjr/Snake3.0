@@ -9,4 +9,6 @@ class GameSettings {
     public static var GridCellsHigh: Float { return _gridSize.y }
     public static var GridLinesWidth: Float = 0.05
     
+    public static var SnakeSpeed: Int = 10
+    
 }

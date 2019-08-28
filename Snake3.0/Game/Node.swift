@@ -57,6 +57,7 @@ extension Node {
     func getPositionX()->Float { return self._position.x }
     func getPositionY()->Float { return self._position.y }
     func getPositionZ()->Float { return self._position.z }
+    func move(_ value: float3) { self._position += value }
     func move(_ x: Float, _ y: Float, _ z: Float){ self._position += float3(x,y,z) }
     func moveX(_ delta: Float){ self._position.x += delta }
     func moveY(_ delta: Float){ self._position.y += delta }
