@@ -11,11 +11,6 @@ class Grid: Node {
         gridLines.moveZ(0.1)
         addChild(gridLines)
     }
-    
-    override func update() {
-//        gridLines.rotateY(GameTime.DeltaTime)
-        super.update()
-    }
 }
 
 class GridBackground: GameObject {
