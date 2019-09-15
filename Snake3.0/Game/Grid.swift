@@ -54,16 +54,21 @@ class Grid: Node {
         if(Keyboard.IsKeyPressed(.downArrow)) {
             snake.setNextDirection(float3(0,-1,0))
         }
+        
+        if(Keyboard.IsKeyPressed(.space)) {
+            snake.addBody()
+        }
     }
     
     override func doUpdate() {
         getInput()
         
-        if(canTick){
+        if(canTick && !GameSettings.GameOver){
             snake.updateSnake()
             if(isApple(cellX: Int(snake.head.gridPosition.x), cellY: Int(snake.head.gridPosition.y))) {
                 appleHit(snake.head.gridPosition)
                 GameSettings.Score += 1
+                snake.addBody()
             }
         }
     }

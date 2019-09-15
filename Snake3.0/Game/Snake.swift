@@ -6,6 +6,8 @@ class Snake: GameObject {
     public var head: SnakeBody { return _head }
     private var _tail: SnakeBody! = nil
     
+    var positions: [String: SnakeBody] = [:]
+    
     private var _turns: [String: float3] = [:]
     override init() {
         super.init()
@@ -37,12 +39,22 @@ class Snake: GameObject {
     }
     
     func updateSnake() {
+        positions.removeAll()
         if(self._head.nextDirection != _nextDirection && _nextDirection != -self._head.nextDirection) {
             _turns.updateValue(_nextDirection, forKey: _head.gridPositionAsString)
         }
         for child in children {
             if let snakeBody = child as? SnakeBody {
                 let key = snakeBody.gridPositionAsString
+                
+                if let snakeBodyHit = positions[snakeBody.gridPositionAsString] {
+                    if(snakeBody.id != _head.id) {
+                        snakeBodyHit.texture = Textures.Get(.SnakeDead)
+                        GameSettings.GameOver = true
+                        print("SCORE: \(GameSettings.Score)")
+                    }
+                }
+                
                 if let turn = _turns[key] {
                     snakeBody.turn(turn)
                     if (snakeBody.id == _tail.id) {
@@ -50,6 +62,7 @@ class Snake: GameObject {
                     }
                 }
                 snakeBody.slither()
+                positions.updateValue(snakeBody, forKey: snakeBody.gridPositionAsString)
             }
         }
     }
