@@ -10,5 +10,6 @@ class GameSettings {
     public static var GridLinesWidth: Float = 0.05
     
     public static var SnakeSpeed: Float = 4.0
+    public static var Score: Int = 0
     
 }

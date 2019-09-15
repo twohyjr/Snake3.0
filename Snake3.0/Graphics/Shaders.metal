@@ -39,9 +39,16 @@ vertex RasterizerData vertex_shader(Vertex vIn [[ stage_in ]],
     return rd;
 }
 
-fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]]) {
-    float4 color = float4(1,0,0,1);
-    
+constexpr sampler sampler2d(address::clamp_to_zero,
+                    filter::linear,
+                    compare_func::less);
+
+fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]],
+                               texture2d<float> texture [[ texture(0) ]]) {
+    float4 color = texture.sample(sampler2d, rd.textureCoordinate);
+    if(color.a <= 0.01) {
+        discard_fragment();
+    }
     return half4(color);
 }
 

@@ -7,12 +7,9 @@ class SnakeScene: Scene {
     override func buildScene() {
         camera.moveZ(0.63)
         
+        grid.addSnake(snake)
+        grid.addApple(cellX: 0, cellY: 0)
         addChild(grid)
-        
-        let apple = Apple(cellX: 0, cellY: 1)
-        grid.addChild(apple)
-        
-        addChild(snake)
     }
-    
+
 }

@@ -2,26 +2,21 @@ import MetalKit
 
 class Snake: GameObject {
     private var _nextDirection = float3(0,-1,0)
-    private var _timeTicked: Float = 0
     private var _head: SnakeBody! = nil
+    public var head: SnakeBody { return _head }
     private var _tail: SnakeBody! = nil
     
     private var _turns: [String: float3] = [:]
-    var canTick: Bool {
-        if(_timeTicked > 60 / GameSettings.SnakeSpeed) {
-            _timeTicked = 0
-            return true
-        }
-        _timeTicked += 1
-        return false
-    }
-    
     override init() {
         super.init()
     
         addBody()
         addBody()
         addBody()
+    }
+    
+    func setNextDirection(_ direction: float3) {
+        self._nextDirection = direction
     }
     
     func addBody() {
@@ -41,43 +36,25 @@ class Snake: GameObject {
         addChild(body)
     }
     
-    private func getInput() {
-        if(Keyboard.IsKeyPressed(.leftArrow)) {
-            self._nextDirection = float3(-1,0,0)
+    func updateSnake() {
+        if(self._head.nextDirection != _nextDirection && _nextDirection != -self._head.nextDirection) {
+            _turns.updateValue(_nextDirection, forKey: _head.gridPositionAsString)
         }
-        if(Keyboard.IsKeyPressed(.rightArrow)) {
-            self._nextDirection = float3(1,0,0)
-        }
-        if(Keyboard.IsKeyPressed(.upArrow)) {
-            self._nextDirection = float3(0,1,0)
-        }
-        if(Keyboard.IsKeyPressed(.downArrow)) {
-            self._nextDirection = float3(0,-1,0)
-        }
-    }
-
-    
-    override func doUpdate() {
-        getInput()
-        
-        if(canTick){
-            if(self._head.nextDirection != _nextDirection && _nextDirection != -self._head.nextDirection) {
-                _turns.updateValue(_nextDirection, forKey: _head.gridPositionAsString)
-            }
-            for child in children {
-                if let snakeBody = child as? SnakeBody {
-                    let key = snakeBody.gridPositionAsString
-                    if let turn = _turns[key] {
-                        snakeBody.turn(turn)
-                        if (snakeBody.id == _tail.id) {
-                            _turns.removeValue(forKey: key)
-                        }
+        for child in children {
+            if let snakeBody = child as? SnakeBody {
+                let key = snakeBody.gridPositionAsString
+                if let turn = _turns[key] {
+                    snakeBody.turn(turn)
+                    if (snakeBody.id == _tail.id) {
+                        _turns.removeValue(forKey: key)
                     }
-                    snakeBody.slither()
                 }
+                snakeBody.slither()
             }
         }
     }
+    
+
     
 }
 
@@ -88,6 +65,8 @@ class SnakeBody: GridPositional {
         super.init(cellX: cellX, cellY: cellY)
 
         self.nextDirection = nextDirection
+        
+         self.texture = Textures.Get(.Snake)
     }
     
     func setInitialGridPosition(pos: int2) {

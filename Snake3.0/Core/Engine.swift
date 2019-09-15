@@ -15,6 +15,8 @@ class Engine {
         self._device = device
         self._commandQueue = device.makeCommandQueue()
         self._defaultLibrary = device.makeDefaultLibrary()
+        
+        Textures.Initialize()
     }
     
 }
