@@ -15,6 +15,9 @@
 		C632E21B2311ED5D00D40819 /* MetalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21A2311ED5D00D40819 /* MetalTypes.swift */; };
 		C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21D2311EF1C00D40819 /* Mesh.swift */; };
 		C632E2202311F17300D40819 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632E21F2311F17300D40819 /* Engine.swift */; };
+		C6752825232EAF5E00A7A162 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6752824232EAF5E00A7A162 /* Apple.swift */; };
+		C6752827232EB1C800A7A162 /* TextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6752826232EB1C800A7A162 /* TextureLoader.swift */; };
+		C6752829232EB22700A7A162 /* GridPositional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6752828232EB22600A7A162 /* GridPositional.swift */; };
 		C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */; };
 		C6AA18922312EF29006CB183 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18912312EF29006CB183 /* Scene.swift */; };
 		C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA18932312EFA2006CB183 /* GameTime.swift */; };
@@ -44,6 +47,9 @@
 		C632E21A2311ED5D00D40819 /* MetalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTypes.swift; sourceTree = "<group>"; };
 		C632E21D2311EF1C00D40819 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		C632E21F2311F17300D40819 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		C6752824232EAF5E00A7A162 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		C6752826232EB1C800A7A162 /* TextureLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLoader.swift; sourceTree = "<group>"; };
+		C6752828232EB22600A7A162 /* GridPositional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPositional.swift; sourceTree = "<group>"; };
 		C6AA188F2312ED86006CB183 /* RenderPipelineStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStates.swift; sourceTree = "<group>"; };
 		C6AA18912312EF29006CB183 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C6AA18932312EFA2006CB183 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				C6AA189A2312F299006CB183 /* GameObject.swift */,
 				C6AA189C2312F34C006CB183 /* Grid.swift */,
 				C6AA18A9231307A9006CB183 /* Snake.swift */,
+				C6752824232EAF5E00A7A162 /* Apple.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C6AA18982312F19F006CB183 /* Math.swift */,
+				C6752826232EB1C800A7A162 /* TextureLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			children = (
 				C6AA18912312EF29006CB183 /* Scene.swift */,
 				C6AA189E2312F4AD006CB183 /* SnakeScene.swift */,
+				C6752828232EB22600A7A162 /* GridPositional.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -270,11 +279,14 @@
 				C632E21E2311EF1C00D40819 /* Mesh.swift in Sources */,
 				C6AA18AF23130981006CB183 /* KeyCodes.swift in Sources */,
 				C6AA189F2312F4AD006CB183 /* SnakeScene.swift in Sources */,
+				C6752825232EAF5E00A7A162 /* Apple.swift in Sources */,
 				C6AA18942312EFA2006CB183 /* GameTime.swift in Sources */,
 				C6AA18902312ED86006CB183 /* RenderPipelineStates.swift in Sources */,
+				C6752827232EB1C800A7A162 /* TextureLoader.swift in Sources */,
 				C6AA18AA231307A9006CB183 /* Snake.swift in Sources */,
 				C6AA18A52312FDC4006CB183 /* GameSettings.swift in Sources */,
 				C6AA189D2312F34C006CB183 /* Grid.swift in Sources */,
+				C6752829232EB22700A7A162 /* GridPositional.swift in Sources */,
 				C6AA18922312EF29006CB183 /* Scene.swift in Sources */,
 				C6AA189B2312F299006CB183 /* GameObject.swift in Sources */,
 				C6AA18A72313005C006CB183 /* DepthStencilStates.swift in Sources */,

@@ -9,6 +9,9 @@ class SnakeScene: Scene {
         
         addChild(grid)
         
+        let apple = Apple(cellX: 0, cellY: 1)
+        grid.addChild(apple)
+        
         addChild(snake)
     }
     

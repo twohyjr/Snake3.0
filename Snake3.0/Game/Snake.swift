@@ -5,6 +5,8 @@ class Snake: GameObject {
     private var _timeTicked: Float = 0
     private var _head: SnakeBody! = nil
     private var _tail: SnakeBody! = nil
+    
+    private var _turns: [String: float3] = [:]
     var canTick: Bool {
         if(_timeTicked > 60 / GameSettings.SnakeSpeed) {
             _timeTicked = 0
@@ -31,7 +33,7 @@ class Snake: GameObject {
             var gridPosition = _tail.gridPosition
             gridPosition = int2(gridPosition.x - Int32(_tail.nextDirection.x),
                                 gridPosition.y + Int32(_tail.nextDirection.y))
-            body = SnakeBody(cellX: gridPosition.x, cellY: gridPosition.y, nextDirection: _tail.nextDirection)
+            body = SnakeBody(cellX: Int(gridPosition.x), cellY: Int(gridPosition.y), nextDirection: _tail.nextDirection)
             body.setPosition(_tail.getPosition() + -_tail.nextDirection / GameSettings.GridCellsWide)
         }
         
@@ -54,43 +56,42 @@ class Snake: GameObject {
         }
     }
 
+    
     override func doUpdate() {
         getInput()
         
         if(canTick){
             if(self._head.nextDirection != _nextDirection && _nextDirection != -self._head.nextDirection) {
-                _head.turn(_nextDirection)
+                _turns.updateValue(_nextDirection, forKey: _head.gridPositionAsString)
             }
             for child in children {
                 if let snakeBody = child as? SnakeBody {
+                    let key = snakeBody.gridPositionAsString
+                    if let turn = _turns[key] {
+                        snakeBody.turn(turn)
+                        if (snakeBody.id == _tail.id) {
+                            _turns.removeValue(forKey: key)
+                        }
+                    }
                     snakeBody.slither()
                 }
             }
         }
-        
-        print(_tail.gridPositionAsString)
     }
     
 }
 
-class SnakeBody: GameObject {
+class SnakeBody: GridPositional {
     var nextDirection = float3(0,0,0)
     
-    private var _gridPosition =  int2(5,5)
-    var gridPosition: int2 { return _gridPosition }
-    
-    init(cellX: Int32, cellY: Int32, nextDirection: float3) {
-        super.init()
-        
-        self._gridPosition.x = cellX
-        self._gridPosition.y = cellY
+    init(cellX: Int, cellY: Int, nextDirection: float3) {
+        super.init(cellX: cellX, cellY: cellY)
+
         self.nextDirection = nextDirection
-        self.setPositionZ(0.101)
-        self.setScale(1 / GameSettings.GridCellsHigh * (1 - GameSettings.GridLinesWidth * 2))
     }
     
     func setInitialGridPosition(pos: int2) {
-        self._gridPosition = pos
+        self.gridPosition = pos
     }
     
     func turn(_ direction: float3) {
@@ -98,12 +99,20 @@ class SnakeBody: GameObject {
     }
     
     func slither() {
-        self.move((1 / GameSettings.GridCellsWide) * self.nextDirection)
-        self._gridPosition = int2(self._gridPosition.x + Int32(self.nextDirection.x),
-                                  self._gridPosition.y - Int32(self.nextDirection.y))
-    }
-    
-    var gridPositionAsString: String {
-        return "(\(gridPosition.x),\(gridPosition.y))"
+        self.gridPosition = int2(self.gridPosition.x + Int32(self.nextDirection.x),
+                                  self.gridPosition.y - Int32(self.nextDirection.y))
+        if(Float(self.gridPosition.x) >= GameSettings.GridCellsWide) {
+            self.gridPosition.x = 0
+        }
+        if(Float(self.gridPosition.x) <= -1) {
+            self.gridPosition.x = Int32(GameSettings.GridCellsWide - 1)
+        }
+        if(Float(self.gridPosition.y) >= GameSettings.GridCellsHigh) {
+            self.gridPosition.y = 0
+        }
+        if(Float(self.gridPosition.y) <= -1) {
+            self.gridPosition.y = Int32(GameSettings.GridCellsHigh - 1)
+        }
+        setPositionOnGrid()
     }
 }
